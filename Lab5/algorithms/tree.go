@@ -141,3 +141,33 @@ func precedence(op string) int {
 	}
 	return 0
 }
+
+func GetHeight(root *structures.Node) int {
+	if root == nil {
+		return 0
+	}
+
+	if root.Left == nil && root.Right == nil {
+		return 0
+	}
+
+	leftHeight := GetHeight(root.Left)
+	rightHeight := GetHeight(root.Right)
+
+	if leftHeight > rightHeight {
+		return 1 + leftHeight
+	}
+	return 1 + rightHeight
+}
+
+func CountOperations(root *structures.Node) int {
+	if root == nil {
+		return 0
+	}
+
+	if isOperator(root.Value) {
+		return 1 + CountOperations(root.Left) + CountOperations(root.Right)
+	}
+
+	return 0
+}
