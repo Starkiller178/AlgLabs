@@ -19,7 +19,7 @@ func main() {
 	}
 	InfixForm := algorithms.ToInfix(tree)
 	fmt.Printf("Постфиксная форма дерева: %s\n", strings.Join(token, " "))
-	fmt.Printf("Постфиксная форма дерева: %s\n", InfixForm)
+	fmt.Printf("Инфиксная форма дерева: %s\n", InfixForm)
 	fmt.Printf("Результат выражения: %.2f\n", res)
 	fmt.Printf("Высота дерева: %d\n", algorithms.GetHeight(tree))
 	fmt.Printf("Количество операций: %d\n", algorithms.CountOperations(tree))
